@@ -21,7 +21,7 @@ window.onload = () => {
 };
 
 function consultarCriptomonedas() {
-    const url = 'https://min-api.cryptocompare.com/documentation';
+    const url = 'https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD';
 
     fetch(url)
         .then(respuesta => respuesta.json())
@@ -78,7 +78,7 @@ function mostrarAlerta(mensaje) {
 function consultarApi() {
     const {moneda, cripotomoneda} = objBusqueda;
     
-    const url = ``;
+    const url = `https://min-api.cryptocompare.com/data/price?fsym=${cripotomoneda}&tsyms=${moneda}`;
 
     fetch(url)
         .then( respuesta => respuesta.json() )
@@ -86,5 +86,6 @@ function consultarApi() {
 };
 
 function mostrarCotizacion(cotizacion) {
+      console.log(cotizacion);
       
 };
