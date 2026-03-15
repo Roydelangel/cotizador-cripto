@@ -55,6 +55,8 @@ function submitFormulario(e) {
 
         return;
     };
+
+    consultarApi();
 };
 
 function mostrarAlerta(mensaje) {
@@ -71,6 +73,18 @@ function mostrarAlerta(mensaje) {
             divMensaje.remove();
         }, 3000);
     };
+};
 
+function consultarApi() {
+    const {moneda, cripotomoneda} = objBusqueda;
     
+    const url = ``;
+
+    fetch(url)
+        .then( respuesta => respuesta.json() )
+        .then( cotizacion => mostrarCotizacion(cotizacion.DISPLAY[cripotomoneda][moneda]))
+};
+
+function mostrarCotizacion(cotizacion) {
+      
 };
